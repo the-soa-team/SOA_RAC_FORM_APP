@@ -55,7 +55,36 @@ namespace SOA_RAC_Form_App
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Car NewCar = new Car();
 
+                NewCar.Brand = BrandBox.Text;
+                NewCar.Model = ModelBox.Text;
+                NewCar.LicenceAge = Int32.Parse(LicenceAgeBox.Text) ;
+                NewCar.DriverAge = Int32.Parse(DriverAgeBox.Text);
+                NewCar.DailyMaxKm = Int32.Parse(DailyMaxKmBox.Text);
+                NewCar.CurrentKm = Int32.Parse(CurrentKmBox.Text);
+                NewCar.HasAirBag = (AirgBagEnum)Enum.Parse(typeof(AirgBagEnum), HasAirBagCombo.SelectedItem.ToString()); // HasAirBagCombo.SelectedValue;
+                NewCar.LuggageVolume = Int32.Parse(LuggageVolumeBox.Text);
+                NewCar.NumSeats = Int32.Parse(NumSeatsBox.Text);
+                NewCar.RentPrice = Int32.Parse(RentPriceBox.Text);
+
+            
+                using (var CarsSoapClient = new CarsClient())
+                {
+                    CarsSoapClient.CreateCar(NewCar);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error happened: " + ex.Message);
+            }
+        }
+
+        private void Cars_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
