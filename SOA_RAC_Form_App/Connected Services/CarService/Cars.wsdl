@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Cars" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.RequestObjects" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICars_ListCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCars" />
+  </wsdl:message>
+  <wsdl:message name="ICars_ListCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_CreateCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_CreateCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_GetCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_GetCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_UpdateCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_UpdateCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_DeleteCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_DeleteCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICars">
+    <wsdl:operation name="ListCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/ListCars" message="tns:ICars_ListCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/ListCarsResponse" message="tns:ICars_ListCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/CreateCar" message="tns:ICars_CreateCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/CreateCarResponse" message="tns:ICars_CreateCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/GetCar" message="tns:ICars_GetCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/GetCarResponse" message="tns:ICars_GetCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/UpdateCar" message="tns:ICars_UpdateCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/UpdateCarResponse" message="tns:ICars_UpdateCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/DeleteCar" message="tns:ICars_DeleteCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/DeleteCarResponse" message="tns:ICars_DeleteCar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICars" type="tns:ICars">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCars">
+      <soap:operation soapAction="http://tempuri.org/ICars/ListCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/CreateCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/GetCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/UpdateCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/DeleteCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Cars">
+    <wsdl:port name="BasicHttpBinding_ICars" binding="tns:BasicHttpBinding_ICars">
+      <soap:address location="http://localhost:59807/Operastions/Cars.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
