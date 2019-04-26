@@ -74,6 +74,8 @@ namespace SOA_RAC_Form_App
                 using (var CarsSoapClient = new CarsClient())
                 {
                     CarsSoapClient.CreateCar(NewCar);
+
+                    MessageBox.Show("Car Saved Successfully");
                 }
             }
             catch (Exception ex)
