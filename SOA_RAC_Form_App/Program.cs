@@ -16,7 +16,7 @@ namespace SOA_RAC_Form_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CarsForm());
+            Application.Run(new Welcome());
         }
     }
 }

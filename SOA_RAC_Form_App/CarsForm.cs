@@ -15,14 +15,16 @@ namespace SOA_RAC_Form_App
 {
     public partial class CarsForm : Form
     {
+        Welcome WelcomeForm;
         string EntityTitle = "Car";
         List<Car> EntityList = new List<Car>();
         Car ActiveEntity;
         FormModEnum ActiveMod = FormModEnum.Create;
 
-        public CarsForm()
+        public CarsForm(Welcome WelcomeForm)
         {
             InitializeComponent();
+            this.WelcomeForm = WelcomeForm;
         }
 
         private void Cars_Load(object sender, EventArgs e)
@@ -240,6 +242,11 @@ namespace SOA_RAC_Form_App
             {
                 MessageBox.Show("Error happened: " + ex.Message);
             }
+        }
+
+        private void CarsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.WelcomeForm.Visible = true;
         }
     }
 }

@@ -120,6 +120,7 @@
             this.CarsBtn.TabIndex = 1;
             this.CarsBtn.Text = "CARS";
             this.CarsBtn.UseVisualStyleBackColor = true;
+            this.CarsBtn.Click += new System.EventHandler(this.CarsBtn_Click);
             // 
             // TracsantionsBtn
             // 

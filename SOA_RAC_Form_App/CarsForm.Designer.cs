@@ -316,7 +316,7 @@
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteBtn.Enabled = false;
             this.DeleteBtn.Location = new System.Drawing.Point(0, 56);
@@ -329,7 +329,7 @@
             // 
             // ListBtn
             // 
-            this.ListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.ListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListBtn.AutoSize = true;
             this.ListBtn.Location = new System.Drawing.Point(0, 0);
@@ -401,8 +401,8 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.UpdateBtn);
             this.panel4.Controls.Add(this.DeleteBtn);
@@ -414,7 +414,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateBtn.Enabled = false;
             this.UpdateBtn.Location = new System.Drawing.Point(0, 104);
@@ -425,15 +425,16 @@
             this.UpdateBtn.UseVisualStyleBackColor = true;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
-            // Cars
+            // CarsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 653);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(700, 700);
-            this.Name = "Cars";
+            this.Name = "CarsForm";
             this.Text = "CARS";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CarsForm_FormClosed);
             this.Load += new System.EventHandler(this.Cars_Load);
             this.FormGroupBox.ResumeLayout(false);
             this.FormGroupBox.PerformLayout();
