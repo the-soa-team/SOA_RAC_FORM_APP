@@ -83,6 +83,7 @@
             this.CustomersBtn.TabIndex = 3;
             this.CustomersBtn.Text = "CUSTOMERS";
             this.CustomersBtn.UseVisualStyleBackColor = true;
+            this.CustomersBtn.Click += new System.EventHandler(this.CustomersBtn_Click);
             // 
             // RequestBtn
             // 

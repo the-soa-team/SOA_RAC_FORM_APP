@@ -13,6 +13,7 @@ namespace SOA_RAC_Form_App
     public partial class Welcome : Form
     {
         CarsForm CarsForm = null;
+        CustomersForm CustomersForm = null;
 
         public Welcome()
         {
@@ -34,6 +35,17 @@ namespace SOA_RAC_Form_App
             this.Visible = false;
             this.CarsForm.ShowDialog();
 
+        }
+
+        private void CustomersBtn_Click(object sender, EventArgs e)
+        {
+            if (this.CustomersForm == null)
+            {
+                this.CustomersForm = new CustomersForm(this);
+            }
+
+            this.Visible = false;
+            this.CustomersForm.ShowDialog();
         }
     }
 }
