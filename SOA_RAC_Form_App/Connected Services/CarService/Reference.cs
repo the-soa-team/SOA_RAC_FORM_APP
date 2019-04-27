@@ -23,6 +23,9 @@ namespace SOA_RAC_Form_App.CarService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CompanyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int DailyMaxKmField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -50,6 +53,19 @@ namespace SOA_RAC_Form_App.CarService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CompanyId {
+            get {
+                return this.CompanyIdField;
+            }
+            set {
+                if ((this.CompanyIdField.Equals(value) != true)) {
+                    this.CompanyIdField = value;
+                    this.RaisePropertyChanged("CompanyId");
+                }
             }
         }
         
@@ -181,6 +197,9 @@ namespace SOA_RAC_Form_App.CarService {
         private string BrandField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CompanyIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CurrentKmField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -229,6 +248,19 @@ namespace SOA_RAC_Form_App.CarService {
                 if ((object.ReferenceEquals(this.BrandField, value) != true)) {
                     this.BrandField = value;
                     this.RaisePropertyChanged("Brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CompanyId {
+            get {
+                return this.CompanyIdField;
+            }
+            set {
+                if ((this.CompanyIdField.Equals(value) != true)) {
+                    this.CompanyIdField = value;
+                    this.RaisePropertyChanged("CompanyId");
                 }
             }
         }

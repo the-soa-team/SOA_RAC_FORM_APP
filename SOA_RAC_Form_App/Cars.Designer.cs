@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.FormGroupBox = new System.Windows.Forms.GroupBox();
+            this.CancelUpdateBtn = new System.Windows.Forms.Button();
             this.HasAirBagCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.RentPriceBox = new System.Windows.Forms.TextBox();
@@ -51,7 +52,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DailyMaxKmBox = new System.Windows.Forms.TextBox();
-            this.CompaniesGridView = new System.Windows.Forms.DataGridView();
+            this.CarGridView = new System.Windows.Forms.DataGridView();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ListBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,7 +63,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.FormGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // FormGroupBox
             // 
+            this.FormGroupBox.Controls.Add(this.CancelUpdateBtn);
             this.FormGroupBox.Controls.Add(this.HasAirBagCombo);
             this.FormGroupBox.Controls.Add(this.label1);
             this.FormGroupBox.Controls.Add(this.RentPriceBox);
@@ -101,6 +103,17 @@
             this.FormGroupBox.TabIndex = 24;
             this.FormGroupBox.TabStop = false;
             this.FormGroupBox.Text = "ADD CAR";
+            // 
+            // CancelUpdateBtn
+            // 
+            this.CancelUpdateBtn.Enabled = false;
+            this.CancelUpdateBtn.Location = new System.Drawing.Point(8, 488);
+            this.CancelUpdateBtn.Name = "CancelUpdateBtn";
+            this.CancelUpdateBtn.Size = new System.Drawing.Size(312, 40);
+            this.CancelUpdateBtn.TabIndex = 25;
+            this.CancelUpdateBtn.Text = "Cancel Update";
+            this.CancelUpdateBtn.UseVisualStyleBackColor = true;
+            this.CancelUpdateBtn.Click += new System.EventHandler(this.CancelUpdateBtn_Click);
             // 
             // HasAirBagCombo
             // 
@@ -224,7 +237,7 @@
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(312, 40);
             this.SaveBtn.TabIndex = 9;
-            this.SaveBtn.Text = "Create Entity";
+            this.SaveBtn.Text = "Create EntityTitle";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
@@ -285,21 +298,21 @@
             this.DailyMaxKmBox.Size = new System.Drawing.Size(200, 22);
             this.DailyMaxKmBox.TabIndex = 13;
             // 
-            // CompaniesGridView
+            // CarGridView
             // 
-            this.CompaniesGridView.AllowUserToAddRows = false;
-            this.CompaniesGridView.AllowUserToOrderColumns = true;
-            this.CompaniesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CompaniesGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CompaniesGridView.Location = new System.Drawing.Point(0, 0);
-            this.CompaniesGridView.MultiSelect = false;
-            this.CompaniesGridView.Name = "CompaniesGridView";
-            this.CompaniesGridView.ReadOnly = true;
-            this.CompaniesGridView.RowTemplate.Height = 24;
-            this.CompaniesGridView.Size = new System.Drawing.Size(750, 440);
-            this.CompaniesGridView.TabIndex = 0;
-            this.CompaniesGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_CellClick);
-            this.CompaniesGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
+            this.CarGridView.AllowUserToAddRows = false;
+            this.CarGridView.AllowUserToOrderColumns = true;
+            this.CarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CarGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CarGridView.Location = new System.Drawing.Point(0, 0);
+            this.CarGridView.MultiSelect = false;
+            this.CarGridView.Name = "CarGridView";
+            this.CarGridView.ReadOnly = true;
+            this.CarGridView.RowTemplate.Height = 24;
+            this.CarGridView.Size = new System.Drawing.Size(750, 440);
+            this.CarGridView.TabIndex = 0;
+            this.CarGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_CellClick);
+            this.CarGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
             // 
             // DeleteBtn
             // 
@@ -379,7 +392,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.CompaniesGridView);
+            this.panel3.Controls.Add(this.CarGridView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -410,6 +423,7 @@
             this.UpdateBtn.TabIndex = 26;
             this.UpdateBtn.Text = "Update Selected Car";
             this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // Cars
             // 
@@ -423,7 +437,7 @@
             this.Load += new System.EventHandler(this.Cars_Load);
             this.FormGroupBox.ResumeLayout(false);
             this.FormGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -444,7 +458,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView CompaniesGridView;
+        private System.Windows.Forms.DataGridView CarGridView;
         private System.Windows.Forms.Button ListBtn;
         private System.Windows.Forms.TextBox DriverAgeBox;
         private System.Windows.Forms.Label label4;
@@ -469,5 +483,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Button CancelUpdateBtn;
     }
 }

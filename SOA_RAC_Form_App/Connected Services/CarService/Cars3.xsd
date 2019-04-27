@@ -10,6 +10,7 @@
   <xs:complexType name="Car">
     <xs:sequence>
       <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
       <xs:element minOccurs="0" name="CurrentKm" type="xs:int" />
       <xs:element minOccurs="0" name="DailyMaxKm" type="xs:int" />
       <xs:element minOccurs="0" name="DriverAge" type="xs:int" />

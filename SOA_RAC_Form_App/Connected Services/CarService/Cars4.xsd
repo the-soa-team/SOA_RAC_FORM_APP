@@ -3,6 +3,7 @@
   <xs:import schemaLocation="http://localhost:59807/Operastions/Cars.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" />
   <xs:complexType name="CarRequest">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
       <xs:element minOccurs="0" name="DailyMaxKm" type="xs:int" />
       <xs:element minOccurs="0" name="DriverAge" type="xs:int" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" minOccurs="0" name="HasAirBag" type="q1:AirgBagEnum" />
