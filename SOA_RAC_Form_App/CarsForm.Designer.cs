@@ -52,7 +52,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DailyMaxKmBox = new System.Windows.Forms.TextBox();
-            this.CarGridView = new System.Windows.Forms.DataGridView();
+            this.EntityGridView = new System.Windows.Forms.DataGridView();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ListBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,7 +63,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.FormGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EntityGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -298,25 +298,25 @@
             this.DailyMaxKmBox.Size = new System.Drawing.Size(200, 22);
             this.DailyMaxKmBox.TabIndex = 13;
             // 
-            // CarGridView
+            // EntityGridView
             // 
-            this.CarGridView.AllowUserToAddRows = false;
-            this.CarGridView.AllowUserToOrderColumns = true;
-            this.CarGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CarGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CarGridView.Location = new System.Drawing.Point(0, 0);
-            this.CarGridView.MultiSelect = false;
-            this.CarGridView.Name = "CarGridView";
-            this.CarGridView.ReadOnly = true;
-            this.CarGridView.RowTemplate.Height = 24;
-            this.CarGridView.Size = new System.Drawing.Size(750, 440);
-            this.CarGridView.TabIndex = 0;
-            this.CarGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_CellClick);
-            this.CarGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
+            this.EntityGridView.AllowUserToAddRows = false;
+            this.EntityGridView.AllowUserToOrderColumns = true;
+            this.EntityGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EntityGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EntityGridView.Location = new System.Drawing.Point(0, 0);
+            this.EntityGridView.MultiSelect = false;
+            this.EntityGridView.Name = "EntityGridView";
+            this.EntityGridView.ReadOnly = true;
+            this.EntityGridView.RowTemplate.Height = 24;
+            this.EntityGridView.Size = new System.Drawing.Size(750, 440);
+            this.EntityGridView.TabIndex = 0;
+            this.EntityGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EntityGridView_CellClick);
+            this.EntityGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.EntityGridView_RowEnter);
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteBtn.Enabled = false;
             this.DeleteBtn.Location = new System.Drawing.Point(0, 56);
@@ -329,7 +329,7 @@
             // 
             // ListBtn
             // 
-            this.ListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ListBtn.AutoSize = true;
             this.ListBtn.Location = new System.Drawing.Point(0, 0);
@@ -392,7 +392,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.CarGridView);
+            this.panel3.Controls.Add(this.EntityGridView);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
@@ -401,8 +401,8 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.UpdateBtn);
             this.panel4.Controls.Add(this.DeleteBtn);
@@ -414,7 +414,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateBtn.Enabled = false;
             this.UpdateBtn.Location = new System.Drawing.Point(0, 104);
@@ -437,7 +437,7 @@
             this.Load += new System.EventHandler(this.Cars_Load);
             this.FormGroupBox.ResumeLayout(false);
             this.FormGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CarGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EntityGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -458,7 +458,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView CarGridView;
+        private System.Windows.Forms.DataGridView EntityGridView;
         private System.Windows.Forms.Button ListBtn;
         private System.Windows.Forms.TextBox DriverAgeBox;
         private System.Windows.Forms.Label label4;
