@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.FormGroupBox = new System.Windows.Forms.GroupBox();
+            this.HasAirBagCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.RentPriceBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,46 +51,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DailyMaxKmBox = new System.Windows.Forms.TextBox();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.CompaniesGridView = new System.Windows.Forms.DataGridView();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.ListBtn = new System.Windows.Forms.Button();
-            this.HasAirBagCombo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             this.FormGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.FormGroupBox);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1112, 653);
-            this.splitContainer1.SplitterDistance = 350;
-            this.splitContainer1.TabIndex = 0;
             // 
             // FormGroupBox
             // 
@@ -118,10 +97,21 @@
             this.FormGroupBox.Controls.Add(this.DailyMaxKmBox);
             this.FormGroupBox.Location = new System.Drawing.Point(8, 24);
             this.FormGroupBox.Name = "FormGroupBox";
-            this.FormGroupBox.Size = new System.Drawing.Size(336, 624);
+            this.FormGroupBox.Size = new System.Drawing.Size(336, 608);
             this.FormGroupBox.TabIndex = 24;
             this.FormGroupBox.TabStop = false;
             this.FormGroupBox.Text = "ADD CAR";
+            // 
+            // HasAirBagCombo
+            // 
+            this.HasAirBagCombo.FormattingEnabled = true;
+            this.HasAirBagCombo.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.HasAirBagCombo.Location = new System.Drawing.Point(120, 272);
+            this.HasAirBagCombo.Name = "HasAirBagCombo";
+            this.HasAirBagCombo.Size = new System.Drawing.Size(200, 24);
+            this.HasAirBagCombo.TabIndex = 24;
             // 
             // label1
             // 
@@ -234,7 +224,7 @@
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(312, 40);
             this.SaveBtn.TabIndex = 9;
-            this.SaveBtn.Text = "Save Form";
+            this.SaveBtn.Text = "Create Entity";
             this.SaveBtn.UseVisualStyleBackColor = true;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
@@ -295,102 +285,157 @@
             this.DailyMaxKmBox.Size = new System.Drawing.Size(200, 22);
             this.DailyMaxKmBox.TabIndex = 13;
             // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.CompaniesGridView);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(758, 653);
-            this.splitContainer2.SplitterDistance = 325;
-            this.splitContainer2.TabIndex = 1;
-            // 
             // CompaniesGridView
             // 
             this.CompaniesGridView.AllowUserToAddRows = false;
+            this.CompaniesGridView.AllowUserToOrderColumns = true;
             this.CompaniesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CompaniesGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CompaniesGridView.Location = new System.Drawing.Point(0, 0);
             this.CompaniesGridView.MultiSelect = false;
             this.CompaniesGridView.Name = "CompaniesGridView";
             this.CompaniesGridView.ReadOnly = true;
             this.CompaniesGridView.RowTemplate.Height = 24;
-            this.CompaniesGridView.Size = new System.Drawing.Size(758, 325);
+            this.CompaniesGridView.Size = new System.Drawing.Size(750, 440);
             this.CompaniesGridView.TabIndex = 0;
+            this.CompaniesGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_CellClick);
             this.CompaniesGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CompaniesGridView_RowEnter);
             // 
-            // splitContainer3
+            // DeleteBtn
             // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.ListBtn);
-            this.splitContainer3.Size = new System.Drawing.Size(758, 324);
-            this.splitContainer3.SplitterDistance = 162;
-            this.splitContainer3.TabIndex = 0;
+            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteBtn.Enabled = false;
+            this.DeleteBtn.Location = new System.Drawing.Point(0, 56);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(744, 40);
+            this.DeleteBtn.TabIndex = 25;
+            this.DeleteBtn.Text = "Delete Selected Car";
+            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // ListBtn
             // 
+            this.ListBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ListBtn.AutoSize = true;
             this.ListBtn.Location = new System.Drawing.Point(0, 0);
             this.ListBtn.Name = "ListBtn";
-            this.ListBtn.Size = new System.Drawing.Size(760, 48);
+            this.ListBtn.Size = new System.Drawing.Size(744, 48);
             this.ListBtn.TabIndex = 0;
             this.ListBtn.Text = "List Cars";
             this.ListBtn.UseVisualStyleBackColor = true;
             this.ListBtn.Click += new System.EventHandler(this.ListBtn_Click);
             // 
-            // HasAirBagCombo
+            // panel1
             // 
-            this.HasAirBagCombo.FormattingEnabled = true;
-            this.HasAirBagCombo.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.HasAirBagCombo.Location = new System.Drawing.Point(120, 272);
-            this.HasAirBagCombo.Name = "HasAirBagCombo";
-            this.HasAirBagCombo.Size = new System.Drawing.Size(200, 24);
-            this.HasAirBagCombo.TabIndex = 24;
+            this.panel1.Controls.Add(this.FormGroupBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 647);
+            this.panel1.TabIndex = 25;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 653);
+            this.tableLayoutPanel1.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.tableLayoutPanel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(353, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(756, 647);
+            this.panel2.TabIndex = 26;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 647);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.CompaniesGridView);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(750, 440);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.UpdateBtn);
+            this.panel4.Controls.Add(this.DeleteBtn);
+            this.panel4.Controls.Add(this.ListBtn);
+            this.panel4.Location = new System.Drawing.Point(3, 449);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(750, 195);
+            this.panel4.TabIndex = 1;
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateBtn.Enabled = false;
+            this.UpdateBtn.Location = new System.Drawing.Point(0, 104);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(744, 40);
+            this.UpdateBtn.TabIndex = 26;
+            this.UpdateBtn.Text = "Update Selected Car";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
             // 
             // Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 653);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimumSize = new System.Drawing.Size(700, 700);
             this.Name = "Cars";
             this.Text = "CARS";
             this.Load += new System.EventHandler(this.Cars_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.FormGroupBox.ResumeLayout(false);
             this.FormGroupBox.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.CompaniesGridView)).EndInit();
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button SaveBtn;
         private System.Windows.Forms.TextBox LicenceAgeBox;
         private System.Windows.Forms.TextBox ModelBox;
@@ -399,9 +444,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.DataGridView CompaniesGridView;
-        private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Button ListBtn;
         private System.Windows.Forms.TextBox DriverAgeBox;
         private System.Windows.Forms.Label label4;
@@ -418,5 +461,13 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox FormGroupBox;
         private System.Windows.Forms.ComboBox HasAirBagCombo;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }
