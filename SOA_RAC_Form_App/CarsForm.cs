@@ -82,6 +82,7 @@ namespace SOA_RAC_Form_App
                         EntityList.Add(car);
                     }
                     
+                    EntityGridView.DataSource = null;
                     EntityGridView.DataSource = EntityList;
                     EntityGridView.Columns["ID"].DisplayIndex = 0;
                 }
