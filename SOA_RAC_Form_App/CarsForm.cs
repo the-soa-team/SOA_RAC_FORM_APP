@@ -13,14 +13,14 @@ using AirgBagEnum = SOA_RAC_Form_App.CarService.AirgBagEnum;
 
 namespace SOA_RAC_Form_App
 {
-    public partial class Cars : Form
+    public partial class CarsForm : Form
     {
         string EntityTitle = "Car";
-        List<Car> CarList = new List<Car>();
-        Car ActiveCar;
+        List<Car> EntityList = new List<Car>();
+        Car ActiveEntity;
         FormModEnum ActiveMod = FormModEnum.Create;
 
-        public Cars()
+        public CarsForm()
         {
             InitializeComponent();
         }
@@ -56,7 +56,7 @@ namespace SOA_RAC_Form_App
                         MessageBox.Show(this.EntityTitle + " Saved Successfully");
                     } else
                     {
-                        CarEntity.ID = this.ActiveCar.ID;
+                        CarEntity.ID = this.ActiveEntity.ID;
                         CarsSoapClient.UpdateCar(CarEntity);
                         MessageBox.Show(this.EntityTitle + " Updated Successfully");
                     }
@@ -77,11 +77,11 @@ namespace SOA_RAC_Form_App
                     foreach (Car car in CarsSoapClient.ListCars(null))
                     {
 
-                        CarList.Add(car);
+                        EntityList.Add(car);
                     }
                     
-                    CarGridView.DataSource = CarList;
-                    CarGridView.Columns["ID"].DisplayIndex = 0;
+                    EntityGridView.DataSource = EntityList;
+                    EntityGridView.Columns["ID"].DisplayIndex = 0;
                 }
             }
             catch (Exception ex)
@@ -90,9 +90,9 @@ namespace SOA_RAC_Form_App
             }
         }
 
-        private void CompaniesGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        private void EntityGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (CarGridView.Rows.Count != CarList.Count)
+            if (EntityGridView.Rows.Count != EntityList.Count)
                 return;
 
             if (e.RowIndex > -1)
@@ -101,9 +101,9 @@ namespace SOA_RAC_Form_App
             }
         }
 
-        private void CompaniesGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void EntityGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (CarGridView.Rows.Count != CarList.Count)
+            if (EntityGridView.Rows.Count != EntityList.Count)
                 return;
 
             if (e.RowIndex > -1)
@@ -118,12 +118,12 @@ namespace SOA_RAC_Form_App
             {
                 using (var CarsSoapClient = new CarsClient())
                 {
-                    CarsSoapClient.DeleteCar(this.ActiveCar.ID);
+                    CarsSoapClient.DeleteCar(this.ActiveEntity.ID);
                     
-                    CarList.Remove(ActiveCar);
-                    this.ClearActiveCar();
-                    CarGridView.DataSource = null;
-                    CarGridView.DataSource = CarList;
+                    EntityList.Remove(ActiveEntity);
+                    this.ClearActiveEntity();
+                    EntityGridView.DataSource = null;
+                    EntityGridView.DataSource = EntityList;
 
                     MessageBox.Show("Car Deleted Successfully");
                 }
@@ -134,14 +134,14 @@ namespace SOA_RAC_Form_App
             }
         }
 
-        private void ClearActiveCar()
+        private void ClearActiveEntity()
         {
-            this.ActiveCar = null;
+            this.ActiveEntity = null;
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            this.ActiveCar = CarList.Find(x => x.ID == ActiveCar.ID);
+            this.ActiveEntity = EntityList.Find(x => x.ID == ActiveEntity.ID);
         
             this.PopulateTheForm();
         }
@@ -149,28 +149,28 @@ namespace SOA_RAC_Form_App
         private void CancelUpdateBtn_Click(object sender, EventArgs e)
         {
             this.SetFormMod(FormModEnum.Create);
-            this.ResetTheForm();
+            this.ResetTheForm(FormGroupBox);
         }
 
         private void PopulateTheForm()
         {
-            BrandBox.Text = ActiveCar.Brand;
-            ModelBox.Text = ActiveCar.Model;
-            LicenceAgeBox.Text = ActiveCar.LicenceAge.ToString();
-            DriverAgeBox.Text = ActiveCar.DriverAge.ToString();
-            DailyMaxKmBox.Text = ActiveCar.DailyMaxKm.ToString();
-            CurrentKmBox.Text = ActiveCar.CurrentKm.ToString();
-            HasAirBagCombo.SelectedIndex = HasAirBagCombo.FindStringExact(ActiveCar.HasAirBag.ToString());
-            LuggageVolumeBox.Text = ActiveCar.LuggageVolume.ToString();
-            NumSeatsBox.Text = ActiveCar.NumSeats.ToString();
-            RentPriceBox.Text = ActiveCar.RentPrice.ToString();
+            BrandBox.Text = ActiveEntity.Brand;
+            ModelBox.Text = ActiveEntity.Model;
+            LicenceAgeBox.Text = ActiveEntity.LicenceAge.ToString();
+            DriverAgeBox.Text = ActiveEntity.DriverAge.ToString();
+            DailyMaxKmBox.Text = ActiveEntity.DailyMaxKm.ToString();
+            CurrentKmBox.Text = ActiveEntity.CurrentKm.ToString();
+            HasAirBagCombo.SelectedIndex = HasAirBagCombo.FindStringExact(ActiveEntity.HasAirBag.ToString());
+            LuggageVolumeBox.Text = ActiveEntity.LuggageVolume.ToString();
+            NumSeatsBox.Text = ActiveEntity.NumSeats.ToString();
+            RentPriceBox.Text = ActiveEntity.RentPrice.ToString();
 
             this.SetFormMod(FormModEnum.Update);
         }
 
-        public void ResetTheForm()
+        public void ResetTheForm(GroupBox gb)
         {
-            foreach (Control control in FormGroupBox.Controls)
+            foreach (Control control in gb.Controls)
             {
                 if (control is TextBox)
                 {
@@ -218,21 +218,21 @@ namespace SOA_RAC_Form_App
 
         private void SetActiveRow(int index)
         {
-            if(CarGridView.Rows.Count < 1)
+            if(EntityGridView.Rows.Count < 1)
             {
                 return;
             }
 
             try
             {
-                CarGridView.Rows[index].Selected = true;
+                EntityGridView.Rows[index].Selected = true;
 
-                if (CarGridView.SelectedRows.Count < 1)
+                if (EntityGridView.SelectedRows.Count < 1)
                 {
                     return;
                 }
-                int CarId = Int32.Parse(CarGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-                this.ActiveCar = CarList.Find(x => x.ID == CarId);
+                int CarId = Int32.Parse(EntityGridView.SelectedRows[0].Cells["Id"].Value.ToString());
+                this.ActiveEntity = EntityList.Find(x => x.ID == CarId);
                 DeleteBtn.Enabled = true;
                 UpdateBtn.Enabled = true;
             }

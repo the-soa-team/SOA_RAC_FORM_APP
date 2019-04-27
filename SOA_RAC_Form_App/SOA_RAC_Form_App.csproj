@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cars.cs">
+    <Compile Include="CarsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cars.Designer.cs">
-      <DependentUpon>Cars.cs</DependentUpon>
+    <Compile Include="CarsForm.Designer.cs">
+      <DependentUpon>CarsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\CarService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -69,8 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cars.resx">
-      <DependentUpon>Cars.cs</DependentUpon>
+    <EmbeddedResource Include="CarsForm.resx">
+      <DependentUpon>CarsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
