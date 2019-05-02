@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="15b75b95-2d08-4ed6-b326-be19f9ab9258" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59807/Operastions/Index.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Index.xsd" MetadataType="Schema" ID="840e3dfb-5b69-4f2e-8192-5849868d845f" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?xsd=xsd1" />
+    <MetadataFile FileName="Index1.xsd" MetadataType="Schema" ID="5aa2bb11-df7d-4b98-ba36-f2f365e0d2b0" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?xsd=xsd0" />
+    <MetadataFile FileName="Index.wsdl" MetadataType="Wsdl" ID="49d10b71-c8e5-442e-9059-f398898b5248" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?wsdl" />
+    <MetadataFile FileName="Index2.xsd" MetadataType="Schema" ID="9c1e9eab-57b7-4f86-8757-53d0dc4889e3" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?xsd=xsd2" />
+    <MetadataFile FileName="Index3.xsd" MetadataType="Schema" ID="a8e51206-31f5-427b-88bf-ae5a5edcb15d" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?xsd=xsd3" />
+    <MetadataFile FileName="Index4.xsd" MetadataType="Schema" ID="20b80c5e-bb4f-411d-af60-ae700c1279ed" SourceId="1" SourceUrl="http://localhost:59807/Operastions/Index.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

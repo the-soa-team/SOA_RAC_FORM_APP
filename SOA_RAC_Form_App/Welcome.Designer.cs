@@ -131,6 +131,7 @@
             this.TracsantionsBtn.TabIndex = 2;
             this.TracsantionsBtn.Text = "TRANSACTIONS";
             this.TracsantionsBtn.UseVisualStyleBackColor = true;
+            this.TracsantionsBtn.Click += new System.EventHandler(this.TracsantionsBtn_Click);
             // 
             // Welcome
             // 

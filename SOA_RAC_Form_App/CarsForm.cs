@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SOA_RAC_Form_App.CarService;
+using SOA_RAC_Form_App.RAC_Service;
 using SOA_RAC_Form_App.Enums;
-using AirgBagEnum = SOA_RAC_Form_App.CarService.AirgBagEnum;
 
 namespace SOA_RAC_Form_App
 {
@@ -42,12 +41,12 @@ namespace SOA_RAC_Form_App
                 CarEntity.Model = ModelBox.Text;
                 CarEntity.LicenceAge = Int32.Parse(LicenceAgeBox.Text);
                 CarEntity.DriverAge = Int32.Parse(DriverAgeBox.Text);
-                CarEntity.DailyMaxKm = Int32.Parse(DailyMaxKmBox.Text);
-                CarEntity.CurrentKm = Int32.Parse(CurrentKmBox.Text);
-                CarEntity.HasAirBag = (AirgBagEnum)Enum.Parse(typeof(AirgBagEnum), HasAirBagCombo.SelectedItem.ToString()); // HasAirBagCombo.SelectedValue;
+                CarEntity.DailyMaxKm = Double.Parse(DailyMaxKmBox.Text);
+                CarEntity.CurrentKm = Double.Parse(CurrentKmBox.Text);
+                CarEntity.HasAirBag = (RAC_Service.AirgBagEnum)Enum.Parse(typeof(RAC_Service.AirgBagEnum), HasAirBagCombo.SelectedItem.ToString()); // HasAirBagCombo.SelectedValue;
                 CarEntity.LuggageVolume = Int32.Parse(LuggageVolumeBox.Text);
                 CarEntity.NumSeats = Int32.Parse(NumSeatsBox.Text);
-                CarEntity.RentPrice = Int32.Parse(RentPriceBox.Text);
+                CarEntity.RentPrice = Double.Parse(RentPriceBox.Text);
 
 
                 using (var CarsSoapClient = new CarsClient())
@@ -74,15 +73,18 @@ namespace SOA_RAC_Form_App
         {
             try
             {
+                EntityGridView.DataSource = null;
+
                 using (var CarsSoapClient = new CarsClient())
                 {
-                    foreach (Car car in CarsSoapClient.ListCars(null))
-                    {
+                    Car[] list = CarsSoapClient.ListCars(null);
+                    EntityList = new List<Car>(list);
+                    //foreach (Car car in list)
+                    //{
 
-                        EntityList.Add(car);
-                    }
+                    //    EntityList.Add(car);
+                    //}
                     
-                    EntityGridView.DataSource = null;
                     EntityGridView.DataSource = EntityList;
                     EntityGridView.Columns["ID"].DisplayIndex = 0;
                 }

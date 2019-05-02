@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SOAAssignment.RequestObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SOAAssignment.RequestObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" />
+  <xs:complexType name="CarRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="DailyMaxKm" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverAge" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" minOccurs="0" name="HasAirBag" type="q1:AirgBagEnum" />
+      <xs:element minOccurs="0" name="LagguageVolumeMin" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenceAge" type="xs:int" />
+      <xs:element minOccurs="0" name="NumSeats" type="xs:int" />
+      <xs:element minOccurs="0" name="RentPrice" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarRequest" nillable="true" type="tns:CarRequest" />
+  <xs:complexType name="AviableCarRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DriverAge" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenceAge" type="xs:int" />
+      <xs:element minOccurs="0" name="NumDays" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AviableCarRequest" nillable="true" type="tns:AviableCarRequest" />
+  <xs:complexType name="CustomerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DriverAge" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenceAge" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerRequest" nillable="true" type="tns:CustomerRequest" />
+  <xs:complexType name="CompanyRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumCars" type="xs:int" />
+      <xs:element minOccurs="0" name="Score" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyRequest" nillable="true" type="tns:CompanyRequest" />
+  <xs:complexType name="TransactionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarId" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentKm" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NumDays" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnKm" type="xs:int" />
+      <xs:element minOccurs="0" name="Returned" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TransactionRequest" nillable="true" type="tns:TransactionRequest" />
+  <xs:complexType name="UserRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumberRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRequest" nillable="true" type="tns:UserRequest" />
+</xs:schema>

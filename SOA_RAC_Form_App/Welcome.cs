@@ -14,6 +14,7 @@ namespace SOA_RAC_Form_App
     {
         CarsForm CarsForm = null;
         CustomersForm CustomersForm = null;
+        TransactionsForm TransactionsForm = null;
 
         public Welcome()
         {
@@ -46,6 +47,17 @@ namespace SOA_RAC_Form_App
 
             this.Visible = false;
             this.CustomersForm.ShowDialog();
+        }
+
+        private void TracsantionsBtn_Click(object sender, EventArgs e)
+        {
+            if (this.TransactionsForm == null)
+            {
+                this.TransactionsForm = new TransactionsForm(this);
+            }
+
+            this.Visible = false;
+            this.TransactionsForm.ShowDialog();
         }
     }
 }

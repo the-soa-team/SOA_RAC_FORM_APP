@@ -8,4 +8,11 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="AirgBagEnum" nillable="true" type="tns:AirgBagEnum" />
+  <xs:simpleType name="RoleEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Admin" />
+      <xs:enumeration value="Employee" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RoleEnum" nillable="true" type="tns:RoleEnum" />
 </xs:schema>

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Index" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.RequestObjects" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Enums" />
+      <xsd:import schemaLocation="http://localhost:59807/Operastions/Index.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SOAAssignment.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICars_ListCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCars" />
+  </wsdl:message>
+  <wsdl:message name="ICars_ListCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_CreateCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_CreateCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_GetCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_GetCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_UpdateCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_UpdateCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_DeleteCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCar" />
+  </wsdl:message>
+  <wsdl:message name="ICars_DeleteCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICars_ListAvailableCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableCars" />
+  </wsdl:message>
+  <wsdl:message name="ICars_ListAvailableCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAvailableCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_ListCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_ListCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_CreateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_CreateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_UpdateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_UpdateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICustomers_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_ListCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListCompanies" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_ListCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_CreateCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_CreateCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_GetCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_GetCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_UpdateCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_UpdateCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_DeleteCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompanies_DeleteCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_ListTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListTransactions" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_ListTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_CreateTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_CreateTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_GetTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_GetTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_UpdateTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_UpdateTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_DeleteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactions_DeleteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_ListUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_ListUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IUsers_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICars">
+    <wsdl:operation name="ListCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/ListCars" message="tns:ICars_ListCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/ListCarsResponse" message="tns:ICars_ListCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/CreateCar" message="tns:ICars_CreateCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/CreateCarResponse" message="tns:ICars_CreateCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/GetCar" message="tns:ICars_GetCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/GetCarResponse" message="tns:ICars_GetCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/UpdateCar" message="tns:ICars_UpdateCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/UpdateCarResponse" message="tns:ICars_UpdateCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/DeleteCar" message="tns:ICars_DeleteCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/DeleteCarResponse" message="tns:ICars_DeleteCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICars/ListAvailableCars" message="tns:ICars_ListAvailableCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICars/ListAvailableCarsResponse" message="tns:ICars_ListAvailableCars_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICustomers">
+    <wsdl:operation name="ListCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomers/ListCustomers" message="tns:ICustomers_ListCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomers/ListCustomersResponse" message="tns:ICustomers_ListCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomers/CreateCustomer" message="tns:ICustomers_CreateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomers/CreateCustomerResponse" message="tns:ICustomers_CreateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomers/GetCustomer" message="tns:ICustomers_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomers/GetCustomerResponse" message="tns:ICustomers_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomers/UpdateCustomer" message="tns:ICustomers_UpdateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomers/UpdateCustomerResponse" message="tns:ICustomers_UpdateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomers/DeleteCustomer" message="tns:ICustomers_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomers/DeleteCustomerResponse" message="tns:ICustomers_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICompanies">
+    <wsdl:operation name="ListCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanies/ListCompanies" message="tns:ICompanies_ListCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanies/ListCompaniesResponse" message="tns:ICompanies_ListCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanies/CreateCompany" message="tns:ICompanies_CreateCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanies/CreateCompanyResponse" message="tns:ICompanies_CreateCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanies/GetCompany" message="tns:ICompanies_GetCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanies/GetCompanyResponse" message="tns:ICompanies_GetCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanies/UpdateCompany" message="tns:ICompanies_UpdateCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanies/UpdateCompanyResponse" message="tns:ICompanies_UpdateCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompanies/DeleteCompany" message="tns:ICompanies_DeleteCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompanies/DeleteCompanyResponse" message="tns:ICompanies_DeleteCompany_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITransactions">
+    <wsdl:operation name="ListTransactions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactions/ListTransactions" message="tns:ITransactions_ListTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactions/ListTransactionsResponse" message="tns:ITransactions_ListTransactions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactions/CreateTransaction" message="tns:ITransactions_CreateTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactions/CreateTransactionResponse" message="tns:ITransactions_CreateTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactions/GetTransaction" message="tns:ITransactions_GetTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactions/GetTransactionResponse" message="tns:ITransactions_GetTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactions/UpdateTransaction" message="tns:ITransactions_UpdateTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactions/UpdateTransactionResponse" message="tns:ITransactions_UpdateTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransactions/DeleteTransaction" message="tns:ITransactions_DeleteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransactions/DeleteTransactionResponse" message="tns:ITransactions_DeleteTransaction_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUsers">
+    <wsdl:operation name="ListUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsers/ListUsers" message="tns:IUsers_ListUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsers/ListUsersResponse" message="tns:IUsers_ListUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsers/CreateUser" message="tns:IUsers_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsers/CreateUserResponse" message="tns:IUsers_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsers/GetUser" message="tns:IUsers_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsers/GetUserResponse" message="tns:IUsers_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsers/UpdateUser" message="tns:IUsers_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsers/UpdateUserResponse" message="tns:IUsers_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsers/DeleteUser" message="tns:IUsers_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsers/DeleteUserResponse" message="tns:IUsers_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICars" type="tns:ICars">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCars">
+      <soap:operation soapAction="http://tempuri.org/ICars/ListCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/CreateCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/GetCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/UpdateCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCar">
+      <soap:operation soapAction="http://tempuri.org/ICars/DeleteCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAvailableCars">
+      <soap:operation soapAction="http://tempuri.org/ICars/ListAvailableCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICustomers" type="tns:ICustomers">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCustomers">
+      <soap:operation soapAction="http://tempuri.org/ICustomers/ListCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomers/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomers/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomers/UpdateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICustomers/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICompanies" type="tns:ICompanies">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListCompanies">
+      <soap:operation soapAction="http://tempuri.org/ICompanies/ListCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCompany">
+      <soap:operation soapAction="http://tempuri.org/ICompanies/CreateCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <soap:operation soapAction="http://tempuri.org/ICompanies/GetCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompany">
+      <soap:operation soapAction="http://tempuri.org/ICompanies/UpdateCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <soap:operation soapAction="http://tempuri.org/ICompanies/DeleteCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITransactions" type="tns:ITransactions">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListTransactions">
+      <soap:operation soapAction="http://tempuri.org/ITransactions/ListTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTransaction">
+      <soap:operation soapAction="http://tempuri.org/ITransactions/CreateTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap:operation soapAction="http://tempuri.org/ITransactions/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <soap:operation soapAction="http://tempuri.org/ITransactions/UpdateTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTransaction">
+      <soap:operation soapAction="http://tempuri.org/ITransactions/DeleteTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IUsers" type="tns:IUsers">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListUsers">
+      <soap:operation soapAction="http://tempuri.org/IUsers/ListUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IUsers/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IUsers/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IUsers/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IUsers/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Index">
+    <wsdl:port name="BasicHttpBinding_ICars" binding="tns:BasicHttpBinding_ICars">
+      <soap:address location="http://localhost:59807/Operastions/Index.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICustomers" binding="tns:BasicHttpBinding_ICustomers">
+      <soap:address location="http://localhost:59807/Operastions/Index.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICompanies" binding="tns:BasicHttpBinding_ICompanies">
+      <soap:address location="http://localhost:59807/Operastions/Index.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITransactions" binding="tns:BasicHttpBinding_ITransactions">
+      <soap:address location="http://localhost:59807/Operastions/Index.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IUsers" binding="tns:BasicHttpBinding_IUsers">
+      <soap:address location="http://localhost:59807/Operastions/Index.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
