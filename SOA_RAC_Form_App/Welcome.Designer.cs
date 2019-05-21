@@ -36,6 +36,9 @@
             this.CompaniesBtn = new System.Windows.Forms.Button();
             this.CarsBtn = new System.Windows.Forms.Button();
             this.TracsantionsBtn = new System.Windows.Forms.Button();
+            this.IncomeReportBtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -55,6 +58,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button3);
+            this.splitContainer1.Panel2.Controls.Add(this.button2);
+            this.splitContainer1.Panel2.Controls.Add(this.IncomeReportBtn);
             this.splitContainer1.Panel2.Controls.Add(this.CustomersBtn);
             this.splitContainer1.Panel2.Controls.Add(this.RequestBtn);
             this.splitContainer1.Panel2.Controls.Add(this.UsersBtn);
@@ -77,7 +83,7 @@
             // 
             // CustomersBtn
             // 
-            this.CustomersBtn.Location = new System.Drawing.Point(87, 145);
+            this.CustomersBtn.Location = new System.Drawing.Point(88, 120);
             this.CustomersBtn.Name = "CustomersBtn";
             this.CustomersBtn.Size = new System.Drawing.Size(200, 50);
             this.CustomersBtn.TabIndex = 3;
@@ -87,7 +93,7 @@
             // 
             // RequestBtn
             // 
-            this.RequestBtn.Location = new System.Drawing.Point(293, 145);
+            this.RequestBtn.Location = new System.Drawing.Point(296, 120);
             this.RequestBtn.Name = "RequestBtn";
             this.RequestBtn.Size = new System.Drawing.Size(200, 50);
             this.RequestBtn.TabIndex = 4;
@@ -96,7 +102,7 @@
             // 
             // UsersBtn
             // 
-            this.UsersBtn.Location = new System.Drawing.Point(499, 145);
+            this.UsersBtn.Location = new System.Drawing.Point(504, 120);
             this.UsersBtn.Name = "UsersBtn";
             this.UsersBtn.Size = new System.Drawing.Size(200, 50);
             this.UsersBtn.TabIndex = 5;
@@ -105,7 +111,7 @@
             // 
             // CompaniesBtn
             // 
-            this.CompaniesBtn.Location = new System.Drawing.Point(87, 89);
+            this.CompaniesBtn.Location = new System.Drawing.Point(88, 64);
             this.CompaniesBtn.Name = "CompaniesBtn";
             this.CompaniesBtn.Size = new System.Drawing.Size(200, 50);
             this.CompaniesBtn.TabIndex = 0;
@@ -115,7 +121,7 @@
             // 
             // CarsBtn
             // 
-            this.CarsBtn.Location = new System.Drawing.Point(293, 89);
+            this.CarsBtn.Location = new System.Drawing.Point(296, 64);
             this.CarsBtn.Name = "CarsBtn";
             this.CarsBtn.Size = new System.Drawing.Size(200, 50);
             this.CarsBtn.TabIndex = 1;
@@ -125,13 +131,41 @@
             // 
             // TracsantionsBtn
             // 
-            this.TracsantionsBtn.Location = new System.Drawing.Point(499, 89);
+            this.TracsantionsBtn.Location = new System.Drawing.Point(504, 64);
             this.TracsantionsBtn.Name = "TracsantionsBtn";
             this.TracsantionsBtn.Size = new System.Drawing.Size(200, 50);
             this.TracsantionsBtn.TabIndex = 2;
             this.TracsantionsBtn.Text = "TRANSACTIONS";
             this.TracsantionsBtn.UseVisualStyleBackColor = true;
             this.TracsantionsBtn.Click += new System.EventHandler(this.TracsantionsBtn_Click);
+            // 
+            // IncomeReportBtn
+            // 
+            this.IncomeReportBtn.Location = new System.Drawing.Point(88, 176);
+            this.IncomeReportBtn.Name = "IncomeReportBtn";
+            this.IncomeReportBtn.Size = new System.Drawing.Size(200, 50);
+            this.IncomeReportBtn.TabIndex = 6;
+            this.IncomeReportBtn.Text = "INCOME REPORT";
+            this.IncomeReportBtn.UseVisualStyleBackColor = true;
+            this.IncomeReportBtn.Click += new System.EventHandler(this.IncomeReportBtn_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(296, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 50);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "VHICLE STATS";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(504, 176);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 50);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "VHICLE STATS";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Welcome
             // 
@@ -161,6 +195,9 @@
         private System.Windows.Forms.Button CustomersBtn;
         private System.Windows.Forms.Button RequestBtn;
         private System.Windows.Forms.Button UsersBtn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button IncomeReportBtn;
     }
 }
 

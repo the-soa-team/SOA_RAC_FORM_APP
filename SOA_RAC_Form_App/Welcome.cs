@@ -15,6 +15,7 @@ namespace SOA_RAC_Form_App
         CarsForm CarsForm = null;
         CustomersForm CustomersForm = null;
         TransactionsForm TransactionsForm = null;
+        IncomeReport IncomeReport = null;
 
         public Welcome()
         {
@@ -58,6 +59,17 @@ namespace SOA_RAC_Form_App
 
             this.Visible = false;
             this.TransactionsForm.ShowDialog();
+        }
+
+        private void IncomeReportBtn_Click(object sender, EventArgs e)
+        {
+            if (this.IncomeReport == null)
+            {
+                this.IncomeReport = new IncomeReport(this);
+            }
+
+            this.Visible = false;
+            this.IncomeReport.ShowDialog();
         }
     }
 }
