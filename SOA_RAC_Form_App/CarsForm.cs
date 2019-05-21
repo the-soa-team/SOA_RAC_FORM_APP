@@ -46,7 +46,7 @@ namespace SOA_RAC_Form_App
                 CarEntity.HasAirBag = (RAC_Service.AirgBagEnum)Enum.Parse(typeof(RAC_Service.AirgBagEnum), HasAirBagCombo.SelectedItem.ToString()); // HasAirBagCombo.SelectedValue;
                 CarEntity.LuggageVolume = Int32.Parse(LuggageVolumeBox.Text);
                 CarEntity.NumSeats = Int32.Parse(NumSeatsBox.Text);
-                CarEntity.RentPrice = Double.Parse(RentPriceBox.Text);
+                CarEntity.RentPrice = Decimal.Parse(RentPriceBox.Text);
 
 
                 using (var CarsSoapClient = new CarsClient())
