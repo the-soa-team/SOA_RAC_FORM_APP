@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace SOA_RAC_Form_App
 {
-    public partial class IncomeReport : Form
+    public partial class CarRentingReport : Form
     {
         Welcome WelcomeForm;
 
-        public IncomeReport(Welcome WelcomeForm)
+        public CarRentingReport(Welcome WelcomeForm)
         {
             InitializeComponent();
             this.WelcomeForm = WelcomeForm;

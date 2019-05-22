@@ -1,6 +1,6 @@
 ﻿namespace SOA_RAC_Form_App
 {
-    partial class IncomeReport
+    partial class CarRentingReport
     {
         /// <summary>
         /// Required designer variable.
@@ -47,24 +47,24 @@
             this.chart.Name = "chart";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
-            series3.Name = "Income";
+            series3.Name = "Renting %";
             series4.ChartArea = "ChartArea1";
             series4.Legend = "Legend1";
-            series4.Name = "Expenses";
+            series4.Name = "Over Usage %";
             this.chart.Series.Add(series3);
             this.chart.Series.Add(series4);
             this.chart.Size = new System.Drawing.Size(800, 450);
             this.chart.TabIndex = 0;
             this.chart.Text = "chart1";
             // 
-            // IncomeReport
+            // CarRentingReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chart);
-            this.Name = "IncomeReport";
-            this.Text = "IncomeReport";
+            this.Name = "CarRentingReport";
+            this.Text = "Average Renting and Over Using Percent";
             this.Load += new System.EventHandler(this.IncomeReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.ResumeLayout(false);
