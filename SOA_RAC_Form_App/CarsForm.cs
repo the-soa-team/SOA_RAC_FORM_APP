@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SOA_RAC_Form_App.RAC_Service;
 using SOA_RAC_Form_App.Enums;
+using RentACar.Bll.Concretes;
+using RentACar.Model.EntityModels;
 
 namespace SOA_RAC_Form_App
 {
@@ -16,8 +18,8 @@ namespace SOA_RAC_Form_App
     {
         Welcome WelcomeForm;
         string EntityTitle = "Car";
-        List<Car> EntityList = new List<Car>();
-        Car ActiveEntity;
+        List<Cars> EntityList = new List<Cars>();
+        Cars ActiveEntity;
         FormModEnum ActiveMod = FormModEnum.Create;
 
         public CarsForm(Welcome WelcomeForm)
@@ -57,7 +59,7 @@ namespace SOA_RAC_Form_App
                         MessageBox.Show(this.EntityTitle + " Saved Successfully");
                     } else
                     {
-                        CarEntity.ID = this.ActiveEntity.ID;
+                        CarEntity.ID = this.ActiveEntity.CarID;
                         CarsSoapClient.UpdateCar(CarEntity);
                         MessageBox.Show(this.EntityTitle + " Updated Successfully");
                     }
@@ -75,19 +77,29 @@ namespace SOA_RAC_Form_App
             {
                 EntityGridView.DataSource = null;
 
-                using (var CarsSoapClient = new CarsClient())
+                using (var carManager = new CarManager())
                 {
-                    Car[] list = CarsSoapClient.ListCars(null);
-                    EntityList = new List<Car>(list);
-                    //foreach (Car car in list)
-                    //{
+                    // Get cars from business layer (Core App)
+                    List<Cars> cars = carManager.SelectAll();
+                    EntityList = cars;
 
-                    //    EntityList.Add(car);
-                    //}
-                    
                     EntityGridView.DataSource = EntityList;
                     EntityGridView.Columns["ID"].DisplayIndex = 0;
                 }
+
+                //using (var CarsSoapClient = new CarsClient())
+                //{
+                //    Car[] list = CarsSoapClient.ListCars(null);
+                //    EntityList = new List<Car>(list);
+                //    //foreach (Car car in list)
+                //    //{
+
+                //    //    EntityList.Add(car);
+                //    //}
+                    
+                //    EntityGridView.DataSource = EntityList;
+                //    EntityGridView.Columns["ID"].DisplayIndex = 0;
+                //}
             }
             catch (Exception ex)
             {
@@ -123,7 +135,7 @@ namespace SOA_RAC_Form_App
             {
                 using (var CarsSoapClient = new CarsClient())
                 {
-                    CarsSoapClient.DeleteCar(this.ActiveEntity.ID);
+                    CarsSoapClient.DeleteCar(this.ActiveEntity.CarID);
                     
                     EntityList.Remove(ActiveEntity);
                     this.ClearActiveEntity();
@@ -146,7 +158,7 @@ namespace SOA_RAC_Form_App
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            this.ActiveEntity = EntityList.Find(x => x.ID == ActiveEntity.ID);
+            this.ActiveEntity = EntityList.Find(x => x.CarID == ActiveEntity.CarID);
         
             this.PopulateTheForm();
         }
@@ -161,12 +173,12 @@ namespace SOA_RAC_Form_App
         {
             BrandBox.Text = ActiveEntity.Brand;
             ModelBox.Text = ActiveEntity.Model;
-            LicenceAgeBox.Text = ActiveEntity.LicenceAge.ToString();
-            DriverAgeBox.Text = ActiveEntity.DriverAge.ToString();
-            DailyMaxKmBox.Text = ActiveEntity.DailyMaxKm.ToString();
+            LicenceAgeBox.Text = ActiveEntity.CarLicenceAge.ToString();
+            DriverAgeBox.Text = ActiveEntity.CarDriverAge.ToString();
+            DailyMaxKmBox.Text = ActiveEntity.DailyKm.ToString();
             CurrentKmBox.Text = ActiveEntity.CurrentKm.ToString();
-            HasAirBagCombo.SelectedIndex = HasAirBagCombo.FindStringExact(ActiveEntity.HasAirBag.ToString());
-            LuggageVolumeBox.Text = ActiveEntity.LuggageVolume.ToString();
+            HasAirBagCombo.SelectedIndex = HasAirBagCombo.FindStringExact(ActiveEntity.HasAirbag.ToString());
+            LuggageVolumeBox.Text = ActiveEntity.LuggageValume.ToString();
             NumSeatsBox.Text = ActiveEntity.NumSeats.ToString();
             RentPriceBox.Text = ActiveEntity.RentPrice.ToString();
 
@@ -237,7 +249,7 @@ namespace SOA_RAC_Form_App
                     return;
                 }
                 int CarId = Int32.Parse(EntityGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-                this.ActiveEntity = EntityList.Find(x => x.ID == CarId);
+                this.ActiveEntity = EntityList.Find(x => x.CarID == CarId);
                 DeleteBtn.Enabled = true;
                 UpdateBtn.Enabled = true;
             }

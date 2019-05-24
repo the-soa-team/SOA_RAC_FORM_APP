@@ -16,6 +16,7 @@ namespace SOA_RAC_Form_App
         CustomersForm CustomersForm = null;
         TransactionsForm TransactionsForm = null;
         IncomeReport IncomeReport = null;
+        UsageStatsReport UsageStatsReport = null;
 
         public Welcome()
         {
@@ -70,6 +71,22 @@ namespace SOA_RAC_Form_App
 
             this.Visible = false;
             this.IncomeReport.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (this.UsageStatsReport == null)
+            {
+                this.UsageStatsReport = new UsageStatsReport(this);
+            }
+
+            this.Visible = false;
+            this.UsageStatsReport.ShowDialog();
         }
     }
 }

@@ -33,7 +33,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfaces">
+      <HintPath>..\..\SOA_RAC_NTA\RentACar.Bll\bin\Debug\Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="RentACar.Bll">
+      <HintPath>..\..\SOA_RAC_NTA\RentACar.Bll\bin\Debug\RentACar.Bll.dll</HintPath>
+    </Reference>
+    <Reference Include="RentACar.Dal">
+      <HintPath>..\..\SOA_RAC_NTA\RentACar.Bll\bin\Debug\RentACar.Dal.dll</HintPath>
+    </Reference>
+    <Reference Include="RentACar.Model">
+      <HintPath>..\..\SOA_RAC_NTA\RentACar.Bll\bin\Debug\RentACar.Model.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -53,6 +72,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UsageStatsReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsageStatsReport.Designer.cs">
+      <DependentUpon>UsageStatsReport.cs</DependentUpon>
     </Compile>
     <Compile Include="IncomeReport.cs">
       <SubType>Form</SubType>
@@ -100,6 +125,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UsageStatsReport.resx">
+      <DependentUpon>UsageStatsReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IncomeReport.resx">
       <DependentUpon>IncomeReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +189,7 @@
     <None Include="Connected Services\RAC_Service\SOA_RAC_Form_App.RAC_Service.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

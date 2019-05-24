@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RentACar.Bll.Concretes;
+using RentACar.Model.EntityModels;
 using SOA_RAC_Form_App.Enums;
 using SOA_RAC_Form_App.PartialForms;
 using SOA_RAC_Form_App.RAC_Service;
@@ -17,8 +19,8 @@ namespace SOA_RAC_Form_App
     {
         Welcome WelcomeForm;
         string EntityTitle = "Customer";
-        List<Transaction> EntityList = new List<Transaction>();
-        Transaction ActiveEntity;
+        List<Transactions> EntityList = new List<Transactions>();
+        Transactions ActiveEntity;
         FormObject FormObject = new FormObject();
         FormModEnum ActiveMod = FormModEnum.Create;
         PickFromAvailableCars PickFromAvailableCars = new PickFromAvailableCars();
@@ -93,19 +95,32 @@ namespace SOA_RAC_Form_App
         {
             try
             {
-                using (var TransactionsClient = new TransactionsClient())
+
+                using (var transactionManager = new TransactionManager())
                 {
                     EntityList.Clear();
-                    foreach (Transaction Transaction in TransactionsClient.ListTransactions(null))
-                    {
+                    // Get cars from business layer (Core App)
+                    List<Transactions> transactions = transactionManager.SelectAll();
+                    EntityList = transactions;
 
-                        EntityList.Add(Transaction);
-                    }
-                    
                     EntityGridView.DataSource = null;
                     EntityGridView.DataSource = EntityList;
-                    EntityGridView.Columns["ID"].DisplayIndex = 0;
+                    EntityGridView.Columns["TransactionID"].DisplayIndex = 0;
                 }
+
+                //using (var TransactionsClient = new TransactionsClient())
+                //{
+                //    EntityList.Clear();
+                //    foreach (Transaction Transaction in TransactionsClient.ListTransactions(null))
+                //    {
+
+                //        EntityList.Add(Transaction);
+                //    }
+                    
+                //    EntityGridView.DataSource = null;
+                //    EntityGridView.DataSource = EntityList;
+                //    EntityGridView.Columns["ID"].DisplayIndex = 0;
+                //}
             }
             catch (Exception ex)
             {
@@ -207,8 +222,8 @@ namespace SOA_RAC_Form_App
                 {
                     return;
                 }
-                int CustomerId = Int32.Parse(EntityGridView.SelectedRows[0].Cells["Id"].Value.ToString());
-                this.ActiveEntity = EntityList.Find(x => x.ID == CustomerId);
+                int CustomerId = Int32.Parse(EntityGridView.SelectedRows[0].Cells["TransactionID"].Value.ToString());
+                this.ActiveEntity = EntityList.Find(x => x.TransactionID == CustomerId);
                 CompleteBtn.Enabled = true;
             }
             catch (Exception ex)
@@ -311,7 +326,7 @@ namespace SOA_RAC_Form_App
                     int r;
                     Int32.TryParse(ReturnKmBox.Text, out r);
                     this.ActiveEntity.ReturnKm = r;
-                    TransactionsClient.UpdateTransaction(this.ActiveEntity);
+                    //TransactionsClient.UpdateTransaction(this.ActiveEntity);
 
                     EntityList.Remove(ActiveEntity);
                     this.ClearActiveEntity();

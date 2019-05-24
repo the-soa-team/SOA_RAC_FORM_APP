@@ -30,15 +30,15 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.IncomeReportBtn = new System.Windows.Forms.Button();
             this.CustomersBtn = new System.Windows.Forms.Button();
             this.RequestBtn = new System.Windows.Forms.Button();
             this.UsersBtn = new System.Windows.Forms.Button();
             this.CompaniesBtn = new System.Windows.Forms.Button();
             this.CarsBtn = new System.Windows.Forms.Button();
             this.TracsantionsBtn = new System.Windows.Forms.Button();
-            this.IncomeReportBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,6 +80,36 @@
             this.label1.Size = new System.Drawing.Size(407, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "WELCOME TO SOA RENT A CAR";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(504, 176);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 50);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "USAGE STATS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(296, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 50);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "VHICLE STATS";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // IncomeReportBtn
+            // 
+            this.IncomeReportBtn.Location = new System.Drawing.Point(88, 176);
+            this.IncomeReportBtn.Name = "IncomeReportBtn";
+            this.IncomeReportBtn.Size = new System.Drawing.Size(200, 50);
+            this.IncomeReportBtn.TabIndex = 6;
+            this.IncomeReportBtn.Text = "INCOME REPORT";
+            this.IncomeReportBtn.UseVisualStyleBackColor = true;
+            this.IncomeReportBtn.Click += new System.EventHandler(this.IncomeReportBtn_Click);
             // 
             // CustomersBtn
             // 
@@ -138,34 +168,6 @@
             this.TracsantionsBtn.Text = "TRANSACTIONS";
             this.TracsantionsBtn.UseVisualStyleBackColor = true;
             this.TracsantionsBtn.Click += new System.EventHandler(this.TracsantionsBtn_Click);
-            // 
-            // IncomeReportBtn
-            // 
-            this.IncomeReportBtn.Location = new System.Drawing.Point(88, 176);
-            this.IncomeReportBtn.Name = "IncomeReportBtn";
-            this.IncomeReportBtn.Size = new System.Drawing.Size(200, 50);
-            this.IncomeReportBtn.TabIndex = 6;
-            this.IncomeReportBtn.Text = "INCOME REPORT";
-            this.IncomeReportBtn.UseVisualStyleBackColor = true;
-            this.IncomeReportBtn.Click += new System.EventHandler(this.IncomeReportBtn_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(296, 176);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 50);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "VHICLE STATS";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(504, 176);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "VHICLE STATS";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Welcome
             // 
